@@ -18,10 +18,24 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Definir PYTHONPATH
+        run: echo "PYTHONPATH=$GITHUB_WORKSPACE" >> $GITHUB_ENV
+
       - name: Instalar dependencias
+        run: pip install pytest
+
+      - name: Ver árbol y probar import
         run: |
-          pip install pytest
+          echo "== Árbol de proyecto =="
+          ls -R
+          echo "== sys.path e import de prueba =="
+          python - <<'PY'
+import sys, os
+print("CWD:", os.getcwd())
+print("sys.path:", sys.path)
+import funciones
+print("OK: se pudo importar 'funciones'")
+PY
 
       - name: Ejecutar pruebas
-        run: |
-          pytest -v
+        run: python -m pytest -v
