@@ -1,6 +1,6 @@
 #funciones/factorial.py 
 import math 
-def factorial(n): 
+def factorialbogado(n): 
 """Devuelve el factorial de un número entero no negativo.""" 
 if n < 0: 
 return None 
