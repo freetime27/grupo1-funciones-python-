@@ -1,3 +1,5 @@
-def multiplicar(a, b):
- """Devuelve el producto de dos números."""
- return a * b
+from funciones.multiplicacion2celis import multiplicar
+
+def test_multiplicar():
+    assert multiplicar(3, 4) == 12
+    assert multiplicar(-2, 5) == -10
