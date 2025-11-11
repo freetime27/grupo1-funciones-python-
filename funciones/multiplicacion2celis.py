@@ -1,6 +1,3 @@
-#funciones/multiplicar.py
 def multiplicar(a, b):
-    """
-    Devuelve el resultado de multiplicar dos números.
-    """
+    """  Devuelve el resultado de multiplicar dos números """
     return a * b
